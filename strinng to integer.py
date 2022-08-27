@@ -10,5 +10,3 @@ def myAtoi(s: str) -> int:
         return x
     except:
         return 0
-
-print(myAtoi("2147483648"))
