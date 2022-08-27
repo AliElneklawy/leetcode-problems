@@ -1,6 +1,5 @@
 
 def isValid(s: str) -> bool:
-    if s == '': return True
     stack = []
     validity = False
     for Paren in s:
@@ -18,4 +17,3 @@ def isValid(s: str) -> bool:
     if stack:
         return False
     return validity
-print(isValid(r"[((){})]"))
