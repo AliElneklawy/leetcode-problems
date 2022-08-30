@@ -1,6 +1,5 @@
 def kthLargestNumber(nums, k: int) -> str:
-        nums = list(map(int, nums))
-        nums.sort(reverse=True)
+        nums.sort(key = int, reverse=True)
         k-=1
-       return str(nums[k])
+       return nums[k]
 print(kthLargestNumber(["2","21","12","1"], 3))
