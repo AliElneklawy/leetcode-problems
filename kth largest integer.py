@@ -1,4 +1,3 @@
-
 def kthLargestNumber(nums, k: int) -> str:
         nums = list(map(int, nums))
         nums.sort(reverse=True)
