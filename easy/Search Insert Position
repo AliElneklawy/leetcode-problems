@@ -1,0 +1,15 @@
+def searchInsert(self, nums: List[int], target: int) -> int:
+        low = 0
+        high = len(nums) - 1
+
+        while low < high:
+            mid = (low + high) // 2
+            if target > nums[mid]:
+                low = mid + 1
+            elif target < nums[mid]:
+                high = mid
+            else:
+                return mid
+                break
+        else:
+            return low + 1 if target > nums[-1] else low
