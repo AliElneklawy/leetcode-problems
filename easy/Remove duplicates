@@ -1,0 +1,18 @@
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return 1
+        k = 0
+        for i in range(len(nums)):
+            if nums[i] == nums[i-1]:
+                nums[i - 1] = '_'
+
+        for i in nums:
+            if i == '_':
+                nums.remove(i)
+                nums.append('_')
+
+        for i in nums:
+            if i == '_': break
+            k += 1
+    
+        return k
