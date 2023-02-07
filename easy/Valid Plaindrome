@@ -1,0 +1,14 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        if not s:
+            return True
+        st = []
+        for i in s:
+            if i.isalpha() or i.isdigit():
+                st.append(i.lower())
+                
+        ch1 = ''.join(i for i in st)
+        ch2 = ''
+        while st:
+            ch2 += st.pop()
+        return ch1 == ch2
