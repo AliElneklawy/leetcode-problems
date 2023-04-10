@@ -1,0 +1,12 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        frst, scnd = float("inf"), 0
+        for i in range(len(nums)):
+            if nums[i] == target:
+                if i <= frst:
+                    frst = i
+                if i > scnd:
+                    scnd = i
+
+                    
+        return(-1, -1) if frst == float("inf") and scnd == 0 else (frst, scnd)
