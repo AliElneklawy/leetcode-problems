@@ -1,0 +1,15 @@
+
+strs = ["","flow","flight"]
+common = []
+minwrd = min(strs)
+maxwrd = max(strs)
+i = 0
+N = min(len(minwrd), len(maxwrd))
+while i < N:
+    if minwrd[i] == maxwrd[i]:
+        common.append(minwrd[i])
+    else:
+        break
+    i+=1
+    
+return(''.join(common))
