@@ -1,0 +1,19 @@
+class Solution:
+    def calPoints(self, operations: List[str]) -> int:
+        st = []
+        for i in operations:
+            if i.isdigit()  or (i[0] == '-' and i[1:].isdigit()):
+                st.append(int(i))
+            elif i.isalpha():
+                if i == "D":
+                    lst = int(st[-1])
+                    lst = 2 * lst
+                    st.append(lst)
+                elif i == "C":
+                    st.pop()
+            else:
+                frst = int(st[-1])
+                scnd = int(st[-2])
+                st.append(frst + scnd)
+                
+        return(sum(st))
