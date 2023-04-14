@@ -1,0 +1,18 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        tr = 0
+        res = []
+        d = {}
+        for i in nums:
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] = 1
+
+        d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+
+        for key in d.keys():
+            res.append(key)
+            tr += 1
+            if tr == k: break
+        return(res)
