@@ -1,0 +1,14 @@
+class Solution:
+    def checkIfExist(self, arr: List[int]) -> bool:
+
+        i = 0
+        while i != len(arr):
+            for j in range(len(arr)):
+                
+                if j == i:
+                    continue
+
+                if arr[i] == 2 * arr[j]:
+                    return True
+            i += 1 
+        return False
