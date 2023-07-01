@@ -1,0 +1,44 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        d = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+
+        num = 0
+        cont = False
+        for i in range(len(s)-1):
+            if cont:
+                cont = False
+                continue
+
+            if s[i] == 'I' and s[i+1] == 'V':
+                add = 4
+                cont = True
+            elif s[i] == 'I' and s[i+1] == 'X':
+                add = 9
+                cont = True
+            elif s[i] == 'X' and s[i+1] == 'L':
+                add = 40
+                cont = True
+            elif s[i] == 'X' and s[i+1] == 'C':
+                add = 90
+                cont = True
+            elif s[i] == 'C' and s[i+1] == 'D': 
+                add = 400
+                cont = True
+            elif s[i] == 'C' and s[i+1] == 'M':
+                add = 900
+                cont = True
+            else:
+                add = d[s[i]]
+                cont = False
+            num += add
+
+        num += d[s[-1]] if not cont else 0
+        return num
