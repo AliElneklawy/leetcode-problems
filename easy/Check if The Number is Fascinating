@@ -1,0 +1,27 @@
+class Solution:
+    def isFascinating(self, n: int) -> bool:
+
+        from math import log10, floor
+
+        n_2, n_3 = 2 * n, 3 * n
+
+        len_n_2 = floor(log10(n_2)) + 1
+        len_n_3 = floor(log10(n_3)) + 1
+
+        n = n_2 + n * 10**len_n_2
+        n = n_3 + n * 10**len_n_3
+
+        ch_set = set()
+        freq = {}
+        while n > 0:
+            rem = n % 10
+            if rem in freq:
+                return(False)
+            else:
+                freq[rem] = 1
+            ch_set.add(rem)
+            n = n // 10
+
+        if len(ch_set) == 9 and 0 not in ch_set:
+            return(True)
+        return(False)
