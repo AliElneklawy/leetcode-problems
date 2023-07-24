@@ -1,0 +1,6 @@
+class Solution:
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+        import numpy as np
+
+        matrix = np.array(matrix).flatten()
+        return(np.sort(matrix, kind='mergesort')[k-1])
