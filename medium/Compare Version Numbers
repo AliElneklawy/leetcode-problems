@@ -1,0 +1,21 @@
+class Solution:
+    def compareVersion(self, version1: str, version2: str) -> int:
+        st1 = []
+        st2 = []
+
+        st1 = version1.split('.')
+        st2 = version2.split('.')
+
+        st1_l = len(st1)
+        st2_l = len(st2)
+
+        st1.extend(['0']*st2_l)
+        st2.extend(['0']*st1_l)
+
+        for i in range(len(st2)):
+            if int(st1[i]) > int(st2[i]):
+                return(1);
+            elif int(st1[i]) < int(st2[i]):
+                return(-1);
+
+        return(0)
