@@ -1,0 +1,16 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        
+        from collections import Counter
+        a = Counter(s)
+        res = ''
+        b = []
+        for i in reversed(a.items()):
+            b.append(i)
+
+        x = sorted(b, key=lambda t: t[1], reverse=True)
+
+        for i in x:
+            res += i[0] * i[1]
+                        
+        return(res)
